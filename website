@@ -2,15 +2,234 @@
 <html lang = ‘en’>
 <head>
 <meta charset=“utf-8”>
+<meta name=“viewport” content=“width=device-width, initial-scale=1”>
 <title>LINKING STUDENTS</title>
 </head>
 <body>
-<h1>OUR GOAL</h1>
-<meta name=“viewport” content=“width=device-width, initial-scale=1”>
-<p> There are resources available to students to participate in events that will help further their career goals everywhere, but many students still find themselves struggling to access information about those resources. Studies show that over 3.2 million STEM jobs go unfilled every year due to the fact that many students are not inspired to follow STEM as a career because they are not able to access events that could very well spark a passion in them for the subject. Thus came **WEBSITE NAME**. Because we know students already have packed schedules, our goal is to make their lives a whole lot easier by putting all the information they could possibly need on our website. Here, they can learn about upcoming summer internship and job opportunities, as well as nearby science fairs, hackathons, workshops, career fairs, and college fairs – among so much more! Our website also aims to address the gender gap in people pursuing careers in the STEM field. We want students to use our website as a resource to achieve their successes.</p>
+<h1>HOW IT WORKS</h1>
+<p>  Linked to Learn essentially compiles information for events across the U.S. and displays it on a easy to access embed Google Maps. This allows students in early high school to have exposure to whatever field they are interested in. Additionally, the calendar allows users to look at events on a specific data. Our database is new, therefore the database is small. But in the future, we will be expanding our database through PHP programming.  </p>
+
+<img scr="">
+
 
 </body>
 </html>
 
+<center>
+<script language="javascript" type="text/javascript">
+var day_of_week = new Array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+var month_of_year = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+
+//  DECLARE AND INITIALIZE VARIABLES
+var Calendar = new Date();
+
+var year = Calendar.getFullYear();     // Returns year
+var month = Calendar.getMonth();    // Returns month (0-11)
+var today = Calendar.getDate();    // Returns day (1-31)
+var weekday = Calendar.getDay();    // Returns day (1-31)
+
+var DAYS_OF_WEEK = 7;    // "constant" for number of days in a week
+var DAYS_OF_MONTH = 31;    // "constant" for number of days in a month
+var cal;    // Used for printing
+
+Calendar.setDate(1);    // Start the calendar day at '1'
+Calendar.setMonth(month);    // Start the calendar month at now
+
+
+/* VARIABLES FOR FORMATTING
+NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+      tags to customize your caledanr's look. */
+
+var TR_start = '<TR>';
+var TR_end = '</TR>';
+var highlight_start = '<TD WIDTH="30"><TABLE CELLSPACING=0 BORDER=1 BGCOLOR=DEDEFF BORDERCOLOR=CCCCCC><TR><TD WIDTH=20><B><CENTER>';
+var highlight_end   = '</CENTER></TD></TR></TABLE></B>';
+var TD_start = '<TD WIDTH="30"><CENTER>';
+var TD_end = '</CENTER></TD>';
+
+/* BEGIN CODE FOR CALENDAR
+NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+tags to customize your calendar's look.*/
+
+cal =  '<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 BORDERCOLOR=BBBBBB><TR><TD>';
+cal += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2>' + TR_start;
+cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#EFEFEF"><CENTER><B>';
+cal += month_of_year[month]  + '   ' + year + '</B>' + TD_end + TR_end;
+cal += TR_start;
+
+//   DO NOT EDIT BELOW THIS POINT  //
+
+// LOOPS FOR EACH DAY OF WEEK
+for(index=0; index < DAYS_OF_WEEK; index++)
+{
+
+// BOLD TODAY'S DAY OF WEEK
+if(weekday == index)
+cal += TD_start + '<B>' + day_of_week[index] + '</B>' + TD_end;
+
+// PRINTS DAY
+else
+cal += TD_start + day_of_week[index] + TD_end;
+}
+
+cal += TD_end + TR_end;
+cal += TR_start;
+
+// FILL IN BLANK GAPS UNTIL TODAY'S DAY
+for(index=0; index < Calendar.getDay(); index++)
+cal += TD_start + '  ' + TD_end;
+
+// LOOPS FOR EACH DAY IN CALENDAR
+for(index=0; index < DAYS_OF_MONTH; index++)
+{
+if( Calendar.getDate() > index )
+{
+  // RETURNS THE NEXT DAY TO PRINT
+  week_day =Calendar.getDay();
+
+  // START NEW ROW FOR FIRST DAY OF WEEK
+  if(week_day == 0)
+  cal += TR_start;
+
+  if(week_day != DAYS_OF_WEEK)
+  {
+
+  // SET VARIABLE INSIDE LOOP FOR INCREMENTING PURPOSES
+  var day  = Calendar.getDate();
+
+  // HIGHLIGHT TODAY'S DATE
+  if( today==Calendar.getDate() )
+  cal += highlight_start + day + highlight_end + TD_end;
+
+  // PRINTS DAY
+  else
+  cal += TD_start + day + TD_end;
+  }
+
+  // END ROW FOR LAST DAY OF WEEK
+  if(week_day == DAYS_OF_WEEK)
+  cal += TR_end;
+  }
+
+  // INCREMENTS UNTIL END OF THE MONTH
+  Calendar.setDate(Calendar.getDate()+1);
+
+}// end for loop
+
+cal += '</TD></TR></TABLE></TABLE>';
+
+//  PRINT CALENDAR
+document.write(cal);
+
+//  End -->
+</script>
+</center>
+
+<div class="topnav">
+  <a class="active"
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <input type="text" placeholder="Search..">
+</div>
+<html>
+<head>
+  <style>
+    .sj
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .pin1
+    {
+      position: absolute;
+      top: 230px;
+      left: 240px;
+      width: 20px;
+      height: 30px;
+    }
+    .pin2
+    {
+      position: absolute;
+      top: 250px;
+      left: 50px;
+      width: 20px;
+      height: 30px;
+    }
+    .pin3
+    {
+      position: absolute;
+      top: 378px;
+      left: 192px;
+      width: 20px;
+      height: 30px;
+    }
+    .pin4
+    {
+      position: absolute;
+      top: 75px;
+      left: 400px;
+      width: 20px;
+      height: 30px;
+    }
+    .pin1text
+    {
+      position: absolute;
+      top: 210px;
+      left: 140px;
+      background-color : white;
+    }
+    .pin2text
+    {
+      position: absolute;
+      top: 280px;
+      left: 0px;
+      background-color : white;
+    }
+    .pin3text
+    {
+      position: absolute;
+      top: 358px;
+      left: 62px;
+      background-color : white;
+    }
+    .pin4text
+    {
+      position: absolute;
+      top: 55px;
+      left: 300px;
+      background-color : white;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: relative; left: 0; top: 0;">
+    <img src="https://www.google.com/maps/d/thumbnail?mid=1JXudFgRmzNUU_cp6SY6X-Vgvl2o&hl=en" class="sj"/>
+    <img src="https://www.stickpng.com/assets/images/58889219bc2fc2ef3a1860aa.png" class="pin1"/>
+    <img src="https://www.stickpng.com/assets/images/58889219bc2fc2ef3a1860aa.png" class="pin2" />
+    <img src="https://www.stickpng.com/assets/images/58889219bc2fc2ef3a1860aa.png" class="pin3"/>
+    <img src="https://www.stickpng.com/assets/images/58889219bc2fc2ef3a1860aa.png" class="pin4" alt="Career Fair on 10/19 at 8:30PM"/>
+    <div style="color: red; text-align:center" class="pin1text">SolarHacks Hackathon on 10/19 at 7AM</div>
+  	<div style="color: red" class="pin2text">Internship Information Session on 10/19 at 4PM</div>
+  	<div style="color: red" class="pin3text">Python Coding Workshop on 10/19 at 6PM</div>
+  	<div style="color: red" class="pin4text">Career Fair on 10/19 at 8:30PM</div> <br>
+  </div>
+</body>
+</html>
+
+
 
 <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=san%20jose%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://camzzle.com">this link</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+
+<!DOCTYPE html>
+<html lang = ‘en’>
+<head>
+<meta charset=“utf-8”>
+<meta name=“viewport” content=“width=device-width, initial-scale=1”>
+<title>LINKING STUDENTS</title>
+</head>
+<body>
+<h1>OUR GOAL</h1>
+<p>  There are resources available to students to participate in events that will help further their career goals everywhere, but many students still find themselves struggling to access information about those resources. Studies show that over 3.2 million STEM jobs go unfilled every year due to the fact that many students are not inspired to follow STEM as a career because they are not able to access events that could very well spark a passion in them for the subject. Thus came **LINKED TO LEARN**. Because we know students already have packed schedules, our goal is to make their lives a whole lot easier by putting all the information they could possibly need on our website. Here, they can learn about upcoming summer internship and job opportunities, as well as nearby science fairs, hackathons, workshops, career fairs, and college fairs – among so much more! Our website also aims to address the gender gap in people pursuing careers in the STEM field. We want students to use our website as a resource to achieve their successes</p>
+
+
