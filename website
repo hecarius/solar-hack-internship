@@ -1,1 +1,16 @@
+<!DOCTYPE html>
+<html lang = ‘en’>
+<head>
+<meta charset=“utf-8”>
+<title>LINKING STUDENTS</title>
+</head>
+<body>
+<h1>OUR GOAL</h1>
+<p> There are resources available to students to participate in events that will help further their career goals everywhere, but many students still find themselves struggling to access information about those resources. Thus came **WEBSITE NAME**. Because we know students already have packed schedules, our goal is to make their lives a whole lot easier by putting all the information they could possibl<meta name=“viewport” content=“width=device-width, initial-scale=1”>
+y need on our website. Here, they can learn about upcoming summer internship and job opportunities, as well as nearby science fairs, hackathons, workshops, career fairs, and college fairs – among so much more!</p>
+
+</body>
+</html>
+
+
 <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=san%20jose%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://camzzle.com">this link</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
